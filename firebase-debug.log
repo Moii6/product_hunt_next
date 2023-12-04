@@ -1,0 +1,57 @@
+[debug] [2023-12-04T21:25:41.686Z] ----------------------------------------------------------------------
+[debug] [2023-12-04T21:25:41.689Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\moygo\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js init
+[debug] [2023-12-04T21:25:41.689Z] CLI Version:   12.9.1
+[debug] [2023-12-04T21:25:41.689Z] Platform:      win32
+[debug] [2023-12-04T21:25:41.690Z] Node Version:  v20.9.0
+[debug] [2023-12-04T21:25:41.690Z] Time:          Mon Dec 04 2023 15:25:41 GMT-0600 (hora estándar central)
+[debug] [2023-12-04T21:25:41.690Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2023-12-04T21:25:41.696Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2023-12-04T21:25:41.697Z] > authorizing via signed-in user (moygomez8473@gmail.com)
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  C:\Users\moygo\OneDrive\Documentos\React training\react projects\producthunt_next
+
+[info] 
+=== Project Setup
+[info] 
+[info] First, let's associate this project directory with a Firebase project.
+[info] You can create multiple project aliases by running firebase use --add, 
+[info] but for now we'll just set up a default project.
+[info] 
+[debug] [2023-12-04T21:27:29.389Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects pageSize=100
+[debug] [2023-12-04T21:27:29.823Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects 200
+[debug] [2023-12-04T21:27:29.823Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects [omitted]
+[info] i  Using project product-hunt-18761 (Product Hunt) 
+[info] 
+=== Database Setup
+[info] i  database: ensuring required API firebasedatabase.googleapis.com is enabled... 
+[debug] [2023-12-04T21:27:33.717Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/product-hunt-18761/services/firebasedatabase.googleapis.com [none]
+[debug] [2023-12-04T21:27:33.717Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/product-hunt-18761/services/firebasedatabase.googleapis.com x-goog-quota-user=projects/product-hunt-18761
+[debug] [2023-12-04T21:27:34.222Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/product-hunt-18761/services/firebasedatabase.googleapis.com 200
+[debug] [2023-12-04T21:27:34.223Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/product-hunt-18761/services/firebasedatabase.googleapis.com [omitted]
+[warn] !  database: missing required API firebasedatabase.googleapis.com. Enabling now... 
+[debug] [2023-12-04T21:27:34.227Z] >>> [apiv2][query] POST https://serviceusage.googleapis.com/v1/projects/product-hunt-18761/services/firebasedatabase.googleapis.com:enable [none]
+[debug] [2023-12-04T21:27:34.227Z] >>> [apiv2][(partial)header] POST https://serviceusage.googleapis.com/v1/projects/product-hunt-18761/services/firebasedatabase.googleapis.com:enable x-goog-quota-user=projects/product-hunt-18761
+[debug] [2023-12-04T21:27:34.625Z] <<< [apiv2][status] POST https://serviceusage.googleapis.com/v1/projects/product-hunt-18761/services/firebasedatabase.googleapis.com:enable 200
+[debug] [2023-12-04T21:27:34.625Z] <<< [apiv2][body] POST https://serviceusage.googleapis.com/v1/projects/product-hunt-18761/services/firebasedatabase.googleapis.com:enable [omitted]
+[debug] [2023-12-04T21:27:44.642Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/product-hunt-18761/services/firebasedatabase.googleapis.com [none]
+[debug] [2023-12-04T21:27:44.643Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/product-hunt-18761/services/firebasedatabase.googleapis.com x-goog-quota-user=projects/product-hunt-18761
+[debug] [2023-12-04T21:27:45.180Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/product-hunt-18761/services/firebasedatabase.googleapis.com 200
+[debug] [2023-12-04T21:27:45.181Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/product-hunt-18761/services/firebasedatabase.googleapis.com [omitted]
+[info] +  database: required API firebasedatabase.googleapis.com is enabled 
+[info] 
+[debug] [2023-12-04T21:27:45.195Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/product-hunt-18761 [none]
+[debug] [2023-12-04T21:27:45.424Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/product-hunt-18761 200
+[debug] [2023-12-04T21:27:45.424Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/product-hunt-18761 {"projectId":"product-hunt-18761","projectNumber":"960109272008","displayName":"Product Hunt","name":"projects/product-hunt-18761","resources":{"hostingSite":"product-hunt-18761","locationId":"us-central"},"state":"ACTIVE","etag":"1_55a99532-8968-4727-ba1b-44d091f29e39"}
+[info] 
+[info] Firebase Realtime Database Security Rules allow you to define how your data should be
+[info] structured and when your data can be read from and written to.
+[info] 

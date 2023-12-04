@@ -9,15 +9,26 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@emotion/babel-preset-css-prop": "^11.11.0",
+    "@emotion/core": "^11.0.0",
+    "@emotion/styled": "^11.11.0",
+    "babel-plugin-emotion": "^11.0.0",
+    "date-fns": "^2.30.0",
+    "firebase": "^10.6.0",
+    "next": "14.0.2",
+    "npm": "^10.2.3",
     "react": "^18",
     "react-dom": "^18",
-    "next": "14.0.2"
+    "react-modal": "^3.16.1",
+    "sweetalert2": "^11.10.1",
+    "sweetalert2-react-content": "^5.0.7",
+    "uuid": "^9.0.1"
   },
   "devDependencies": {
     "autoprefixer": "^10.0.1",
-    "postcss": "^8",
-    "tailwindcss": "^3.3.0",
     "eslint": "^8",
-    "eslint-config-next": "14.0.2"
+    "eslint-config-next": "14.0.2",
+    "postcss": "^8",
+    "tailwindcss": "^3.3.0"
   }
 }
