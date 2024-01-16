@@ -32,15 +32,12 @@ const Producto = () => {
 
   useEffect(() => {
     obtenerProducto(String(id));
-    console.log(producto);
   }, [id]);
 
   const handleVotar = async () => {
-    console.log(usuario.uid);
     if (loginForComment()) {
       if (userAbleToVote()) {
         const votosUp = Number(producto.votos) + 1;
-        console.log(votosUp, usuario.uid);
         await updateProducto(producto, votosUp, usuario.uid);
       }
     }
@@ -51,8 +48,6 @@ const Producto = () => {
 
   const handleComentar = async () => {
     if (loginForComment()) {
-      console.log("comentando");
-      console.log("comentario: ", comentar);
       const nuevoComentario = {
         usuarioId: usuario.uid,
         usuarioNombre: usuario.displayName,
@@ -67,7 +62,6 @@ const Producto = () => {
   };
 
   const handleEliminar = async () => {
-    console.log("Eliminar");
     if (userAbleToDelete()) {
       miAlerta
         .fire({
@@ -97,7 +91,6 @@ const Producto = () => {
   };
 
   const userAbleToVote = () => {
-    console.log(producto);
     if (!producto.votados.includes(usuario.uid)) return true;
     else {
       setAlerta({ message: "Ya votaste este producto", type: "warning" });

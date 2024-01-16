@@ -10,11 +10,9 @@ const DetallesProducto = ({ producto }) => {
   const { id, nombre, empresa, imageDetails, votos, creado } = producto;
 
   const handleVotar = async () => {
-    console.log(usuario.uid);
     if (loginForComment()) {
       if (userAbleToVote()) {
         const votosUp = Number(producto.votos) + 1;
-        console.log(votosUp, usuario.uid);
         await updateProducto(producto, votosUp, usuario.uid);
       }
     }
@@ -22,9 +20,6 @@ const DetallesProducto = ({ producto }) => {
       setAlerta("");
     }, 3000);
   };
-  useEffect(() => {
-    console.log(producto);
-  }, []);
 
   const loginForComment = () => {
     if (usuario.displayName) return true;

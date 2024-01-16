@@ -8,13 +8,10 @@ const Buscador = () => {
   const handleBusqueda = (e) => {
     if (e.target.value.length < 1) obtenerProductos();
     setBusqueda(e.target.value);
-    console.log(busqueda.length);
     const buscados = [...productosList].filter((item) =>
       item.nombre.toLowerCase().includes(busqueda.toLowerCase())
     );
     setProductosList(buscados);
-
-    console.log(busqueda);
   };
   const handleFocus = () => {
     obtenerProductos();

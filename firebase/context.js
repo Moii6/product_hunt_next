@@ -70,12 +70,10 @@ const FirebaseProvider = ({ children }) => {
     const productoRef = doc(db, "productos", id);
     try {
       const productoSnap = await getDoc(productoRef);
-      console.log(productoSnap);
       if (productoSnap.exists()) {
         const productFormated = productFormatValues(
           productoSnap._document.data.value.mapValue.fields
         );
-        console.log(productFormated);
         setError({});
         setProducto(productFormated);
       } else setError({ message: "404", type: "error" });
@@ -96,7 +94,6 @@ const FirebaseProvider = ({ children }) => {
     );
     setProductosList(listUpdated);
     try {
-      console.log(producto.id);
       await setDoc(doc(productRef, `${producto.id}`), productoUpdated);
       setAlerta({
         message: `votos actualizados`,
@@ -113,13 +110,16 @@ const FirebaseProvider = ({ children }) => {
 
   const obtenerProductos = async () => {
     let docInfo;
-    const productosSnapshot = await getDocs(productRef);
-    const productos = productosSnapshot.docs.map((doc) => {
-      docInfo = doc._document.data.value.mapValue.fields;
-      return productFormatValues(docInfo);
-    });
-    console.log(productos);
-    setProductosList(productos);
+    try {
+      const productosSnapshot = await getDocs(productRef);
+      const productos = productosSnapshot.docs.map((doc) => {
+        docInfo = doc._document.data.value.mapValue.fields;
+        return productFormatValues(docInfo);
+      });
+      setProductosList(productos);
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   const obtenerProductosPorVotos = async () => {
@@ -147,13 +147,11 @@ const FirebaseProvider = ({ children }) => {
   const eliminarProducto = async (path, id) => {
     const copy = [...productosList];
     const listUpdated = copy.filter((item) => item.id != id);
-    console.log(listUpdated);
     setProductosList(listUpdated);
     const prodRef = doc(db, "productos", `${id}`);
     try {
       await eliminarImagen(path);
       const res = await deleteDoc(prodRef);
-      console.log(res);
     } catch (error) {
       console.log(error.message);
     }
@@ -163,8 +161,7 @@ const FirebaseProvider = ({ children }) => {
     const imageRef = ref(storage, `${refPath}`);
 
     try {
-      const res = await deleteObject(imageRef);
-      console.log(res);
+      await deleteObject(imageRef);
     } catch (error) {
       console.log(error);
     }
@@ -172,10 +169,8 @@ const FirebaseProvider = ({ children }) => {
   const crearComentario = async (productoId, comentario) => {
     const productoUpdated = { ...producto };
     productoUpdated.comentarios = [...productoUpdated.comentarios, comentario];
-    console.log(productoUpdated);
     setProducto(productoUpdated);
     const productosListCopy = [...productosList];
-    console.log(productosList);
     const listUpdated = productosListCopy.map((item) =>
       Number(item.id) === Number(productoId) ? productoUpdated : item
     );
@@ -196,11 +191,9 @@ const FirebaseProvider = ({ children }) => {
   };
 
   const productFormatValues = (docInfo) => {
-    console.log(docInfo);
     let comments = docInfo.comentarios?.arrayValue;
     let voted = docInfo.votados?.arrayValue;
     let imgDet = docInfo.imageDetails?.mapValue;
-    console.log(imgDet);
     if (!comments || Object.keys(comments).length === 0) comments = [];
     else {
       let commentInfo;

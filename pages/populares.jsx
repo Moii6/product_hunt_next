@@ -9,8 +9,6 @@ const populares = () => {
   const [filter, setFilter] = useState(true);
 
   const handleChangeFilter = () => {
-    console.log(filter);
-    console.log(filter ? "recientes" : "Mas votados");
     if (filter) getProductsByFilter("creado");
     else getProductsByFilter("votos");
   };

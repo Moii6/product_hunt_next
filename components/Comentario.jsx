@@ -4,7 +4,6 @@ import { es } from "date-fns/locale";
 import React from "react";
 
 const Comentario = ({ userId, comentario }) => {
-  console.log(comentario);
   if (comentario)
     return (
       <div className="flex flex-row items-center md:w-10/12 gap-2 ">

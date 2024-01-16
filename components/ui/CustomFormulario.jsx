@@ -9,7 +9,6 @@ const CustomFormulario = ({ props, fnSubmit }) => {
   //const { name, type, placeholder, value, onchange, fn } = fields;
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(fields);
     fnSubmit();
   };
 
@@ -19,7 +18,6 @@ const CustomFormulario = ({ props, fnSubmit }) => {
     //while (percentLoad < 100) {
     setTimeout(() => {
       setPercentLoad(percentLoad + 5);
-      console.log(percentLoad);
     }, 200);
     //}
   };
