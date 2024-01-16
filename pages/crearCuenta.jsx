@@ -4,11 +4,9 @@ import { validarEmail, validarPassword, validarString } from "@/utils";
 import Layout from "@/components/layout/Layout";
 import Alerta from "@/components/Alerta";
 import FirebaseContext from "../firebase";
-//import useFirebase from "@/firebase/useFirebase";
 
 const crearCuenta = () => {
   const [nuevoUsuario] = useContext(FirebaseContext);
-  //const { nuevoUsuario } = useFirebase();
   const [nombre, setNombre] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
