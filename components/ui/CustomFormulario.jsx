@@ -35,7 +35,7 @@ const CustomFormulario = ({ props, fnSubmit }) => {
       )}
 
       {fields?.map((field) => (
-        <div className="mb-7 flex flex-col justify-center">
+        <div key={field.nombre} className="mb-7 flex flex-col justify-center">
           {field.nombre === "Descripcion" && (
             <>
               <fieldset>

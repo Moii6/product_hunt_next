@@ -210,7 +210,11 @@ const Producto = () => {
                   <div className="flex flex-col mt-5">
                     {producto?.comentarios &&
                       producto?.comentarios.map((item) => (
-                        <Comentario userId={usuario.uid} comentario={item} />
+                        <Comentario
+                          key={usuario.uid}
+                          userId={usuario.uid}
+                          comentario={item}
+                        />
                       ))}
                   </div>
                 </div>
