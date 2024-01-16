@@ -14,7 +14,7 @@ const Populares = () => {
   };
   useEffect(() => {
     getProductsByFilter("votos");
-  }, []);
+  });
   return (
     <>
       <div>
