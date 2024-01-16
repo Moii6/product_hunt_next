@@ -10,7 +10,7 @@ import React, { useEffect, useState } from "react";
 import useFirebase from "@/firebase/useFirebase";
 import { Router, useRouter } from "next/router";
 
-const nuevoProducto = () => {
+const NuevoProducto = () => {
   const { usuario, crearProducto, setAlerta } = useFirebase();
   const [nombre, setNombre] = useState("");
   const [empresa, setEmpresa] = useState("");
@@ -100,4 +100,4 @@ const nuevoProducto = () => {
   );
 };
 
-export default nuevoProducto;
+export default NuevoProducto;

@@ -5,7 +5,7 @@ import { validarEmail, validarPassword } from "@/utils";
 import Link from "next/link";
 import Router from "next/router";
 import React, { useEffect, useState } from "react";
-const login = () => {
+const Login = () => {
   const { iniciarSesion } = useFirebase();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -130,4 +130,4 @@ const login = () => {
   );
 };
 
-export default login;
+export default Login;

@@ -4,7 +4,7 @@ import Layout from "@/components/layout/Layout";
 import useFirebase from "@/firebase/useFirebase";
 import React, { useEffect, useState } from "react";
 
-const populares = () => {
+const Populares = () => {
   const { productosList, getProductsByFilter, alerta } = useFirebase();
   const [filter, setFilter] = useState(true);
 
@@ -72,4 +72,4 @@ const populares = () => {
   );
 };
 
-export default populares;
+export default Populares;
