@@ -6,7 +6,7 @@ import Alerta from "@/components/Alerta";
 //import FirebaseContext from "../firebase";
 import useFirebase from "@/firebase/useFirebase";
 
-const crearCuenta = () => {
+const CrearCuenta = () => {
   //const [nuevoUsuario] = useContext(FirebaseContext);
   const { nuevoUsuario } = useFirebase();
   const [nombre, setNombre] = useState("");
@@ -162,4 +162,4 @@ const crearCuenta = () => {
   );
 };
 
-export default crearCuenta;
+export default CrearCuenta;
