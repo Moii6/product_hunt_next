@@ -110,7 +110,7 @@ const Producto = () => {
   };
   useEffect(() => {
     if (Object.keys(productosList).length === 0) obtenerProductos();
-  });
+  }, [productosList]);
   return (
     <>
       <Layout>

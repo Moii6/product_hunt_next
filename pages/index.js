@@ -10,8 +10,8 @@ export default function Home() {
   const { productosList, obtenerProductos, alerta } = useFirebase();
 
   useEffect(() => {
-    obtenerProductos();
-  });
+    if (Object.keys(productosList).length === 0) obtenerProductos();
+  }, [productosList]);
   return (
     <>
       <div>
