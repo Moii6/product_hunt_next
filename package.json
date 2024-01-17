@@ -12,6 +12,7 @@
     "@emotion/babel-preset-css-prop": "^11.11.0",
     "@emotion/core": "^11.0.0",
     "@emotion/styled": "^11.11.0",
+    "@netlify/plugin-nextjs": "^4.41.3",
     "babel-plugin-emotion": "^11.0.0",
     "date-fns": "^2.30.0",
     "firebase": "^10.6.0",
