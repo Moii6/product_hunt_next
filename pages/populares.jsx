@@ -13,6 +13,7 @@ const Populares = () => {
     else getProductsByFilter("votos");
   };
   useEffect(() => {
+    console.log("useeffect de populares obteniendo by votos");
     getProductsByFilter("votos");
   }, []);
   return (

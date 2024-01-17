@@ -260,6 +260,7 @@ const FirebaseProvider = ({ children }) => {
   };
 
   useEffect(() => {
+    console.log("useeffect del context, previo a verificar el auth");
     onAuthStateChanged(auth, (usuario) => {
       if (usuario) {
         setUsuario(usuario);

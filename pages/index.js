@@ -11,6 +11,7 @@ export default function Home() {
 
   useEffect(() => {
     obtenerProductos();
+    console.log("obteniendo productos desde index");
   }, []);
   return (
     <>

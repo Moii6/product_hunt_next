@@ -7,6 +7,7 @@ const ProgressBar = ({ running }) => {
   const { setLoadImage } = useFirebase();
 
   useEffect(() => {
+    console.log("useEffect del progress bar filled");
     if (filled < 105 && isRuning) {
       setTimeout(() => {
         setFilled(filled + 5);
@@ -18,6 +19,7 @@ const ProgressBar = ({ running }) => {
     }
   }, [filled]);
   useEffect(() => {
+    console.log("useEffect del progress bar running");
     if (running) {
       setFilled(5);
       setIsRunning(true);
