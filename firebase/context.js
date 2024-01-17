@@ -267,7 +267,7 @@ const FirebaseProvider = ({ children }) => {
         setUsuario({});
       }
     });
-  }, [auth]);
+  }, []);
   return (
     <FirebaseContext.Provider
       value={{
